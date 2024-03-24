@@ -1,0 +1,36 @@
+local GUI = Instance.new("ScreenGui")
+GUI.Name = "ZeroIQ Bedwars"
+GUI.Parent = game.CoreGui
+
+local MainFrame = Instance.new("Frame")
+MainFrame.Size = UDim2.new(0, 300, 0, 200)
+MainFrame.Position = UDim2.new(0.5, -150, 0.5, -100)
+MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+MainFrame.Parent = GUI
+
+local Logo = Instance.new("ImageButton")
+Logo.Size = UDim2.new(0, 100, 0, 100)
+Logo.Position = UDim2.new(0, 50, 0, 0)
+Logo.Parent = MainFrame
+-- Set the logo image here
+
+local ScriptScrollingFrame = Instance.new("ScrollingFrame")
+ScriptScrollingFrame.Size = UDim2.new(1, -100, 1, 0)
+ScriptScrollingFrame.Position = UDim2.new(0, 100, 0, 0)
+ScriptScrollingFrame.Parent = MainFrame
+
+local ScriptTextLabel = Instance.new("TextLabel")
+ScriptTextLabel.Size = UDim2.new(1, 0, 1, 0)
+ScriptTextLabel.Text = "-- Put your Bedwars script here --"
+ScriptTextLabel.TextColor3 = Color3.new(1, 0, 1)
+ScriptTextLabel.TextSize = 14
+ScriptTextLabel.TextWrapped = true
+ScriptTextLabel.Parent = ScriptScrollingFrame
+
+Logo.MouseButton1Click:Connect(function()
+    if MainFrame.Visible then
+        MainFrame.Visible = false
+    else
+        MainFrame.Visible = true
+    end
+end)
